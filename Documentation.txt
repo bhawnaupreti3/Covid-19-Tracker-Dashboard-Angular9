@@ -1,0 +1,13 @@
+--Admin Credentials :
+username : admin
+password : admin
+
+--- Assumption :
+Double click on tab for view
+
+---News Data use angular in memory web api
+---Country data is fetched from real endpoints
+
+---Local storage for token authentication
+
+
