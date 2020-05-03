@@ -1,0 +1,16 @@
+
+<app-header></app-header>
+<div *ngFor="let item of news">
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{item.title}}
+            </mat-panel-title>
+            <mat-panel-description>
+              {{item.description}}
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+        
+          <p>{{item.fullNews}}.</p>
+    </mat-expansion-panel>
+ </div>

@@ -28,6 +28,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -92,6 +93,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -123,6 +125,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Covid19-Dashboard-Angular9"
+    }
+  },
+  "defaultProject": "Covid19-Dashboard-Angular9",
+  "cli": {
+    "analytics": "17a8a9c0-9088-4eba-af7e-2ece1738370f"
+  }
 }

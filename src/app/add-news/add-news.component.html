@@ -1,0 +1,137 @@
+<div class="card">
+    <div class="card-body">
+        <h2>Enter latest news</h2>
+      <form novalidate (ngSubmit)="save(newsForm.value)" [formGroup]="newsForm">
+        <div class="form-group row mb-2">
+          <label class="col-md-2 col-form-label" for="txtTitle">
+            Title of News
+          </label>
+          <div class="col-md-8">
+            <input
+              class="form-control"
+              id="txtTitle"
+              type="text"
+              placeholder="Enter Title"
+              formControlName="title"
+              [ngClass]="{
+                'is-invalid':
+                  (newsForm.get('title').touched || newsForm.get('title').dirty) &&
+                  !newsForm.get('title').valid
+              }"
+            />
+            <span class="invalid-feedback">
+              <span *ngIf="newsForm.get('title').errors?.required">
+                Please enter title.
+              </span>
+              <span *ngIf="newsForm.get('title').errors?.minlength">
+                Title must be longer than 5 characters.
+              </span>
+            </span>
+          </div>
+        </div>
+  
+        <div class="form-group row mb-2">
+          <label class="col-md-2 col-form-label" for="textDesc">
+            Description of News
+          </label>
+          <div class="col-md-8">
+            <input
+              class="form-control"
+              id="textDesc"
+              type="text"
+              placeholder="Enter Description"
+              formControlName="description"
+              [ngClass]="{
+                'is-invalid':
+                  (newsForm.controls.description.touched ||
+                  newsForm.controls.description.dirty) &&
+                  !newsForm.controls.description.valid
+              }"
+            />
+            <span class="invalid-feedback">
+              <span *ngIf="newsForm.controls.description.errors?.required">
+                Please enter news description.
+              </span>
+            </span>
+          </div>
+        </div>
+  
+        <div class="form-group row mb-2">
+          <label class="col-md-2 col-form-label" for="textNewsSummary">
+            Summary
+          </label>
+          <div class="col-md-8">
+            <input
+              class="form-control"
+              id="textNewsSummary"
+              type="text"
+              placeholder="Enter new summary"
+              formControlName="summary"
+              [ngClass]="{
+                'is-invalid':
+                  (newsForm.get('summary').touched ||
+                  newsForm.get('summary').dirty) &&
+                  !newsForm.get('summary').valid
+              }"
+            />
+            <span class="invalid-feedback">
+              <span *ngIf="newsForm.get('summary').errors?.required">
+                Please enter new summary.
+              </span>
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group row mb-2">
+            <label class="col-md-2 col-form-label" for="textFullNews">
+              Full News box
+            </label>
+            <div class="col-md-8">
+              <input
+                class="form-control"
+                id="textFullNews"
+                type="text"
+                placeholder="Enter full news"
+                formControlName="fullNews"
+                [ngClass]="{
+                  'is-invalid':
+                    (newsForm.get('fullNews').touched ||
+                    newsForm.get('fullNews').dirty) &&
+                    !newsForm.get('fullNews').valid
+                }"
+              />
+              <span class="invalid-feedback">
+                <span *ngIf="newsForm.get('fullNews').errors?.required">
+                  Please enter news.
+                </span>
+              </span>
+            </div>
+          </div>
+  
+  
+        <div class="form-group row mb-2">
+          <div class="offset-md-2 col-md-4">
+            <button
+              mat-flat-button color="accent"
+              type="submit"
+              style="width:80px"
+              [title]="
+              newsForm.valid
+                  ? 'Save your entered data'
+                  : 'Disabled until the form data is valid'
+              "
+              [disabled]="!newsForm.valid"
+            >
+              Save
+            </button>
+          </div>
+        </div>
+        <div class="form-group row mb-2">
+            <div class="offset-md-2 col-md-4">
+              
+        <button mat-flat-button color="primary" (click)="goBack()">Back</button>
+    </div>
+</div>
+      </form>
+    </div>
+  </div>  

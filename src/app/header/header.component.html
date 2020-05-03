@@ -1,0 +1,15 @@
+<mat-tab-group (selectedIndexChange)="test($event)">  
+    <mat-tab label ="Dashboard"></mat-tab>
+    <mat-tab label="Latest News"></mat-tab>
+    <mat-tab label="Precautions"></mat-tab>
+    <mat-tab disabled>
+      <ng-template mat-tab-label>
+        <button  *ngIf="isLoggedIn" mat-button color="primary" (click)="addnews()">Add News           
+        </button>
+          <button  *ngIf="isLoggedIn" mat-button color="primary" (click)="logout()">Logout           
+          </button>
+          <button  *ngIf="!isLoggedIn" mat-button color="primary" (click)="login()">Admin Login            
+        </button>
+      </ng-template>
+  </mat-tab>
+  </mat-tab-group>
